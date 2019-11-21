@@ -1,16 +1,16 @@
 <template>
-  <div id="app" style="background-color: steelblue;">
-    <NavBar />
+  <div id="app">
+    <Home />
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar";
+import Home from "@/views/Home";
 
 export default {
   name: "app",
   components: {
-    NavBar
+    Home
   }
 };
 </script>

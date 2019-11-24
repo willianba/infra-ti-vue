@@ -7,13 +7,7 @@
   >
     <div class="message-header">
       <p>{{ error ? "Failed" : "Success" }}</p>
-      <button
-        class="delete"
-        @click="
-          message = '';
-          error = false;
-        "
-      ></button>
+      <button class="delete" @click="emitClearMessage"></button>
     </div>
     <div class="message-body">{{ message }}</div>
   </div>
@@ -22,6 +16,11 @@
 <script>
 export default {
   name: "MessageBar",
+  methods: {
+    emitClearMessage() {
+      this.$emit("clear-message");
+    }
+  },
   props: {
     error: {
       type: Boolean,
